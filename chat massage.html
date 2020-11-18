@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>massage Javas</title>
+    
+    <style>
+        .open-button {
+            bottom: 10px;
+            border: 0;
+            width: 200px;
+            height: 50px;
+            background-color: cadetblue;
+            position: fixed;
+            right: 10px;
+        }
+        .chat-popup {
+            width: 300px;
+            display: none;
+            z-index: 9;
+            position: fixed;
+            bottom: 8px;       
+            border: 1px solid gray;
+            right: 8px;
+        
+        }
+        .form-container {
+            padding: 10px 35px;
+            background-color: white;
+        }
+        .btn {
+            margin: 15px 0px;
+            padding: 10px 100px ;
+        }
+        .btn-cancel {
+            
+            padding: 10px 95px ;
+        }
+        #disini {
+            font-size: 18px;
+            margin-left: 9% ;
+            height: 200px;
+        }
+        #input {
+            font-size: 15px;
+        }
+
+
+    </style>
+    <script>
+        function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+        function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+        function sendform() {
+        disini.innerHTML = disini.innerHTML + "<br>"  + input.value;
+        input.value = "";
+    }
+    </script>
+</head>
+<body>
+    <h2>Source from w3school.com</h2>
+    <button class="open-button" onclick="openForm()">Chat</button>
+    <div class="chat-popup" id="myForm">
+        <p id="disini"></p>
+        <form  class="form-container" id="form">
+            
+            <textarea name="massage" id="input" cols="26" rows="1"  placeholder="Type Message...">
+
+            </textarea><br>
+            
+            <br>
+            <button type="button" class="btn" onclick="sendform()">Send</button>
+            <br>
+            <button type="button" class="btn-cancel" onclick="closeForm()">Cancel</button>
+        </form>    
+        
+    </div>
+    
+ 
+ 
+    
+</body>
+</html>
