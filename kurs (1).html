@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Kurs</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        fieldset {
+            
+            width: 50%;
+            margin: auto ;
+        }
+     
+        .item {
+            padding: 0.5em;
+            
+        }
+        input {
+            padding: 0.5em;
+        }
+        select {
+            padding: 0.5em;
+        }
+    </style>
+    <script>
+        
+        function SetHarga(set) {
+            nilai = document.querySelector("#nilai").value;
+            if(set == "DUS") {
+                var hasil = nilai * 9.915
+            } else if(set == "DSingapore") {
+                var hasil = nilai * 13.472
+            } else if(set == "RMalaysia") {
+                var hasil = nilai * 874 
+            } else if(set == "YenJepang") {
+                var hasil = nilai * 120
+            } else if(set == "Euro") {
+                var hasil = nilai * 15.888
+            } else if(set == "RArabSaudi") {
+                var hasil = nilai * 3.592
+            }
+            document.querySelector("#hasil").value = hasil;
+        }
+
+        
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend align="center">Kurs Rupiah</legend>
+    <div class="main">
+        
+        <div class="item 1">
+            <p>Masukkan Nilai</p>
+            <input type="number" id="nilai" placeholder="jumlah uang">
+            <hr>
+        </div>
+        <div class="item 2">
+            <p>Valas</p>
+            <select name="select" id="select1" onclick="SetHarga(this.value)">
+                <option value="DUS">Dollar US</option>
+                <option value="DSingapore">Dollar Singapure</option>
+                <option value="RMalaysia">Ringgit Malaysia</option>
+                <option value="YenJepang">Yen Jepang</option>
+                <option value="Euro">Euro</option>
+                <option value="RArabSaudi">Riyal Arab Saudi</option>
+            </select>
+            <hr>
+        </div>
+        <div class="item 3">
+            <p>Nilai Rupiah</p>
+            <td><input type="text" id="hasil" ></td>
+            <hr>
+        </div>
+    </div>
+    </fieldset>
+</body>
+</html>
